@@ -26,3 +26,14 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+
+    - name: scp service to cloud server
+      uses: dylan
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        password: ${{ secrets.SSH_PASS }}
+        #这里是需要传输的文件，可以多个
+        source: "goworkflow2"
+        #这里是设置传输到服务器哪个目录，必须是这个账号有权限的目录
+        target: "~"
