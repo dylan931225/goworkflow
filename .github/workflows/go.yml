@@ -30,7 +30,7 @@ jobs:
     - name: scp service to cloud server
       uses: appleboy/scp-action@v0.1.7
       with:
-        host: ${{ secrets.SSH_HOST }}
+        host: ${{ secrets.SSH_HSOT }}
         username: ${{ secrets.SSH_USER }}
         password: ${{ secrets.SSH_PASS }}
         #这里是需要传输的文件，可以多个
